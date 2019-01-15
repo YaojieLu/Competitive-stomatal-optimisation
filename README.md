@@ -8,9 +8,9 @@
   
 Under **"Scripts/Derived variables/"**:  
 **"/DV/"** contains all the R code used to predict  
-1) Retive soil water content at stomatal closure (wL); 
-2) Xylem water potential at stomatal closure (pxmin); 
-3) Xylem water potential at 50% loss of the maximum stomatal conductance (pxgs50) 
+1) Retive soil water content at stomatal closure (*w*<sub>L<sub>); 
+2) Xylem water potential at stomatal closure (&#936;<sub>xmin</sub>); 
+3) Xylem water potential at 50% loss of the maximum stomatal conductance (&#936;<sub>gs50</sub>) 
 4) Plants’ anisohydric/isohydric behaviour (slope) 
   
 **"/g1/"** contains all the R code used to predict the relationship between *g*<sub>1</sub> and &#936;<sub>s</sub>.  
