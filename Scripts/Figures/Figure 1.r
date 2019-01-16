@@ -52,8 +52,8 @@ arrows(-0.7, PLCmf(-0.7)*0.8, -0.7, PLCf1(-0.7), length = 0.1, lty = 2, lwd = 1,
 arrows(-0.7, PLCmf(-0.7)*1.2, -0.7, PLCf1(x), length = 0.1, lty = 2, lwd = 1, col=Cols[2])
 arrows(x, PLCf1(x), -10, PLCf1(x), lty = 2, lwd = 1, length = 0.1)
 arrows(x, PLCf1(x), x, -4, lty = 2, lwd = 1, length = 0.1)
-text(x-0.8, 3, expression(psi[xL]), cex=2)
-text(-8.3, PLCf1(x)-6, expression(PLC(psi[xL])), cex=2)
+text(x-0.8, 3, expression(psi[xLt]), cex=2)
+text(-8.3, PLCf1(x)-6, expression(PLC[t](psi[xLt])), cex=2)
 box()
 
 # Right
