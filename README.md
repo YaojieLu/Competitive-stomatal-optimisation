@@ -1,4 +1,4 @@
-# Competitive stomatal optimisation
+# Stomatal behaviour shaped by water competition
 **"Data/"** contains data sets (.csv & .xls) from Zhou et al. (2014), Martínez-Vilalta et al. (2014) and Choat et al. (2012).  
 **"Figures/"** contains all the figures produced (.pdf).  
 **"Results/"** contains all the model predictions (.csv).  
