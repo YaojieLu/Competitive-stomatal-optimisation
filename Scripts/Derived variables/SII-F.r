@@ -1,6 +1,11 @@
 
 # Soil water retention curve
 psf <- function(w)pe*w^(-b)
+#psf <- Vectorize(function(s, psa = 0.209, psb = 1.236, psc = 0.258){
+#  f1 <- function(ps)s - 1/((1+(-ps/psa)^psb)^psc)
+#  res <- uniroot(f1, c(-1000000, 0), tol=.Machine$double.eps)$root
+#  return(res)
+#})
 
 # From ps to w
 wf <- function(ps)(ps/pe)^(-1/b)

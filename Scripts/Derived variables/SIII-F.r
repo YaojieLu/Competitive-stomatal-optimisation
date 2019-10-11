@@ -1,6 +1,11 @@
 
 # Soil water retention curve
 psf <- function(w)pe*w^(-b)
+#psf <- Vectorize(function(s, psa = 0.209, psb = 1.236, psc = 0.258){
+#  f1 <- function(ps)s - 1/((1+(-ps/psa)^psb)^psc)
+#  res <- uniroot(f1, c(-1000000, 0), tol=.Machine$double.eps)$root
+#  return(res)
+#})
 
 # From ps to w
 wf <- function(ps)(ps/pe)^(-1/b)
@@ -92,9 +97,9 @@ averf <- function(wL){
 # ESS derivation
 optwLf <- Vectorize(function(wLr){
   averAirelf1 <- Vectorize(function(wLi)averAirelf(wLi, wLr))
-  optwLi <- optimize(averAirelf1, c(0.1, 0.3), tol=.Machine$double.eps^0.3, maximum=T)
+  optwLi <- optimize(averAirelf1, c(0.1, 0.6), tol=.Machine$double.eps^0.3, maximum=T)
   res <- optwLi$maximum-wLr
-  #message(wLr, " ", optwLi$maximum)
+  message(wLr, " ", optwLi$maximum)
   return(res)
 })
 

@@ -20,10 +20,12 @@ plane <- matrix(rep(-100, length(z3)), nrow = n, ncol = n)
 color <- z4
 dim(color) <- dim(z3)
 
-p <- plot_ly(colors = c('blue', 'red')) %>%
+p <- plot_ly(colors = c('blue', 'red'), width = 1000, height = 1000) %>%
   layout(scene = list(xaxis = list(title = "A", range = c(-10, 0)),
-                         yaxis = list(title = "B", range = c(-10, 0)),
-                         zaxis = list(title = "C", range = c(-100, 50)))) %>%
+                      yaxis = list(title = "B", range = c(-10, 0)),
+                      zaxis = list(title = "C", range = c(-100, 50)),
+                      camera = list(up = list(x = 0.2, y = 0.2, z = 0.2))),
+         margin = list(l = 50, r = 50, t = 50, b = 50)) %>%
   # 3D surface
   add_surface(x = x, y = y1, z = z3,
               opacity = 0.8, surfacecolor = color,
@@ -33,13 +35,13 @@ p <- plot_ly(colors = c('blue', 'red')) %>%
               opacity = 0.8, surfacecolor = color,
               cauto = F, cmax = 1, cmin = 0) %>%
   hide_colorbar()
-# White lines
-for(i in 1:n){
-  p <- add_trace(p, x = rep(x[i], n), y = y1, z = z3[, i],
-                 type = "scatter3d", mode = "lines", showlegend = FALSE,
-                 line = list(color = "white", width = 4))
-  p <- add_trace(p, x = rep(x[i], n), y = y1, z = plane[, i],
-                 type = "scatter3d", mode = "lines", showlegend = FALSE,
-                 line = list(color = "white", width = 4))
-}
+## White lines
+#for(i in 1:n){
+#  p <- add_trace(p, x = rep(x[i], n), y = y1, z = z3[, i],
+#                 type = "scatter3d", mode = "lines", showlegend = FALSE,
+#                 line = list(color = "white", width = 4))
+#  p <- add_trace(p, x = rep(x[i], n), y = y1, z = plane[, i],
+#                 type = "scatter3d", mode = "lines", showlegend = FALSE,
+#                 line = list(color = "white", width = 4))
+#}
 p
